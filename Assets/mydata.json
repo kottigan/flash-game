@@ -1,0 +1,19 @@
+{
+   "person": [
+       {
+           "firstName": "Clark",
+           "job": "Reporter",
+           "roll": 20
+       },
+       {
+           "firstName": "Bruce",
+           "job": "Playboy",
+           "roll": 30
+       },
+       {
+           "firstName": "Peter",
+           "job": "Photographer",
+           "roll": 40
+       }
+   ]
+}

@@ -1,0 +1,113 @@
+* {
+  box-sizing : border-box;
+}
+
+html {
+  min-height : 100vh;
+}
+
+body {
+  margin     : 0;
+  background : radial-gradient(
+                 rgb(26, 25, 24),
+                 black
+               );
+}
+.game-info-container{
+  grid-column: 1 / -1;
+}
+.game-container{
+  display: grid;
+  grid-template-columns: repeat(6,auto);
+  grid-gap: 6px;
+  margin: 23px;
+  justify-content: center;
+}
+
+.card{
+  background-color: rgb(53, 51, 51);
+  height: 105px;
+  width: 205px;
+  position: relative;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid rgb(87, 84, 84);
+
+  align-items: center;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  color: beige;
+}
+
+.card.matched{
+  background-color: black;
+  visibility: hidden;
+}
+
+
+.card.selected{
+  background-color: rgb(60, 85, 60);
+}
+
+.card.hide{
+  background-color: black;
+}
+
+
+.card:hover{
+  color: rgb(224, 218, 213);
+  background-color: rgb(67, 82, 82);
+}
+/* h3:hover{
+  color:chocolate;
+} */
+.card:active{
+  color: rgb(110, 23, 23);
+  background-color: rgb(105, 124, 67);
+}
+.card:focus{
+  background-color: violet;
+}
+
+.overlay-text{
+display: none;
+position : fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+justify-content: center;
+align-items: center;
+z-index: 100;
+color: beige;
+}
+
+.overlay-text-small{
+  font-size: .3em;
+}
+
+.overlay-text.visible{
+  display: flex;
+  animation: overlay-grow 500ms forwards;
+  flex-direction: column;
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0,0,0,0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(0,0,0,.8);
+    font-size: 10em;
+  }
+}
+
+@media(max-width: 1000px) {
+  .game-container{
+    grid-template-columns: repeat(3,auto); 
+  }
+
+}
